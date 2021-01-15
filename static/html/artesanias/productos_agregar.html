@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-sm-8">
                     <select name="clasificacion_id" id="clasificacion_id">
-                        <option value="0">Ninguno</option>
+                        
                         <!--LISTADO_CLASIFICACION-->
                         <option value="{id}">{descripcion}</option>
                         <!--LISTADO_CLASIFICACION-->
@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-sm-8">
                     <select name="artesano_id" id="artesano_id">
-                        <option value="0">Ninguno</option>
+                        
                         <!--LISTADO_ARTESANOS-->
                         <option value="{id}">{nombres}</option>
                         <!--LISTADO_ARTESANOS-->
@@ -61,7 +61,7 @@
                     <label for="precio">Precio: </label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="number" class="form-control" 
+                    <input type="number" min="0.00" max="10000.00" step="0.01" class="form-control" 
                     name="precio" id="precio"
                     required maxlength="100">
                 </div>

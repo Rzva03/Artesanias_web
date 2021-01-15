@@ -1,0 +1,39 @@
+<input type="button" class="btn btn-primary" id="button-cart" value="Carrito" 
+onclick="location.href='/artesanias/artesanos/agregar'" style="width: 25; float:right;"><br>
+<!--LISTADO_PRODUCTOS-->
+<div class="m-3 p-3" style="width: 370px;  float:left;">
+    <input type="hidden" value="{imagenes}" id="{id}" class="hidden_images">
+    <div class="card" style="color: rgb(35, 43, 161); background-color:rgb(202, 163, 34);">
+        <div class="centrado card-header bg-success" >
+            <h5 id="">{producto}</h5>
+        </div>
+        <div class="card-body shadow rounded"   >
+            <div class="row"  style="height:300px;" >
+                <div class="col-xs-12 col-sm-4">
+                    <h6>{descripcion}</h6>
+                </div>
+                <div class="col-xs-12  col-sm-8 images" id ="divImages_{id}">
+                    <input class="boton_personalizado" type="button" id="anterior_{id}" value="<<                                             >>" 
+                        onclick="allImages('{imagenes}', '{id}')"><br>
+                    <!--<input type="button" id="siguiente_{id}" value=">>"style="width: 31px;  float:right; color:darkorange;"
+                    onclick="next('{imagenes}, {id}')">--><br><br>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12  col-sm-4 centrado" style="width: 30px;  float: center;">
+                    <strong>Precio unitario</strong><br> <h4 id="precio_{id}">${precio}</h4> 
+                </div>
+                <div class="col-xs-12  col-sm-8 derecho" style="width: 30px;  float: left;">
+                    <strong>Cantidad: </strong><input type="number" id="{id}" value="1" size="3"/>
+                    <a 
+                    onclick="shoppingCart('{producto}, {id}, precio_{id}')"> <img src="/static/img/canasto.png" alt ="canasto">
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!--LISTADO_PRODUCTOS-->
+<script src="/static/js/productos_listar.js"></script>

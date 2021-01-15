@@ -11,6 +11,7 @@ class Productos extends DAO {
         $this->artesano_id = "";
         $this->precio = "";
         $this->existencias = "";
+        $this->imagenes="";
     } 
 
 }
