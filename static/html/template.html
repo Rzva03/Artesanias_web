@@ -9,7 +9,8 @@
     <!--seccion jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link href = "https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href = "https://code.jquery.com/jquery-2.1.4.min.js" rel = "stylesheet">
 
     <!--para bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   
@@ -66,8 +67,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-sm-3" id="nav">
-                
+            <nav class="col-sm-3" id="nav" >
                     <div class="vertical-menu">
                         <a href="/artesanias/clasificacion/listar" class="active">Inicio</a>
                         <a href="/artesanias/clasificacion/listar">Clasificación</a>
@@ -78,7 +78,7 @@
                       </div>
    
             </nav>
-            <section class="col-sm-9">
+            <section class="col-sm-9" style="width: 700px; float: left; " >
                 {CONTENIDO}
             </section>
         </div>

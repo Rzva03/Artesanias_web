@@ -1,14 +1,106 @@
-<input type="button" class="btn btn-primary" id="button-cart" value="Carrito" 
-onclick="location.href='/artesanias/artesanos/agregar'" style="width: 25; float:right;"><br>
+<a style='cursor: pointer;' id="open" title="" class="boton_mostrar"><img src="/static/img/cart.png"></a>
+<div id="popup" style="display: none;">
+    <div class="content-popup">
+        <div class="close"><a href="#" id="close"><img src="/static/img/close.png"/></a></div>
+        <div>
+<!-- START SECTION SHOPPING CART -->
+<section class="shopping-cart" >
+    <div class="container">
+        <h1 class="text-center">Carrito de Compras</h1>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <div class="shopping-cart-header">
+                    <h6>Producto</h6>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="shopping-cart-header">
+                    <h6 class="text-truncate">Precio</h6>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="shopping-cart-header">
+                    <h6>Cantidad</h6>
+                </div>
+            </div>
+        </div>
+        <!-- ? START SHOPPING CART ITEMS -->
+        <div class="shopping-cart-items shoppingCartItemsContainer">
+        </div>
+        <!-- ? END SHOPPING CART ITEMS -->
+
+        <!-- START TOTAL -->
+        <div class="row">
+            <div class="col-12">
+                <div class="shopping-cart-total d-flex align-items-center">
+                    <p class="mb-0">Total</p>
+                    <p class="ml-4 mb-0 shoppingCartTotal">$0.0</p>
+                    <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                        data-delay="2000">
+                        <div class="toast-header">
+                            <span>✅</span>
+                            <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body text-white">
+                            Se aumentó correctamente la cantidad
+                        </div>
+                    </div>
+                    <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                    onclick="location.href='/artesanias/pedidos/agregar'">Comprar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- END TOTAL -->
+
+        <!-- START MODAL COMPRA -->
+        <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Pronto recibirá su pedido</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MODAL COMPRA -->
+
+
+    </div>
+
+</section>
+<!-- END SECTION SHOPPING CART -->
+            <div style="float:left; width:100%;">
+    	</div>
+        </div>
+    </div>
+</div>
+<div class="popup-overlay"></div>
+<div>
+
 <!--LISTADO_PRODUCTOS-->
 <div class="m-3 p-3" style="width: 370px;  float:left;">
     <input type="hidden" value="{imagenes}" id="{id}" class="hidden_images">
     <div class="card" style="color: rgb(35, 43, 161); background-color:rgb(202, 163, 34);">
         <div class="centrado card-header bg-success" >
-            <h5 id="">{producto}</h5>
+            <h5 class="card-title">{producto}</h5>
         </div>
         <div class="card-body shadow rounded"   >
-            <div class="row"  style="height:300px;" >
+            <div class="row"  style="height:255px;" >
                 <div class="col-xs-12 col-sm-4">
                     <h6>{descripcion}</h6>
                 </div>
@@ -22,13 +114,11 @@ onclick="location.href='/artesanias/artesanos/agregar'" style="width: 25; float:
             </div>
             <div class="row">
                 <div class="col-xs-12  col-sm-4 centrado" style="width: 30px;  float: center;">
-                    <strong>Precio unitario</strong><br> <h4 id="precio_{id}">${precio}</h4> 
+                    <strong>Precio unitario</strong><br> <h4 class="card-price">${precio}</h4> 
                 </div>
                 <div class="col-xs-12  col-sm-8 derecho" style="width: 30px;  float: left;">
-                    <strong>Cantidad: </strong><input type="number" id="{id}" value="1" size="3"/>
-                    <a 
-                    onclick="shoppingCart('{producto}, {id}, precio_{id}')"> <img src="/static/img/canasto.png" alt ="canasto">
-                    </a>
+                    <br>
+                    <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                 </div>
             </div>
             
@@ -37,3 +127,5 @@ onclick="location.href='/artesanias/artesanos/agregar'" style="width: 25; float:
 </div>
 <!--LISTADO_PRODUCTOS-->
 <script src="/static/js/productos_listar.js"></script>
+<script src="/static/js/carrito_compras.js"></script>
+
