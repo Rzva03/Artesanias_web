@@ -56,35 +56,11 @@
         </div>
 
         <!-- END TOTAL -->
-
-        <!-- START MODAL COMPRA -->
-        <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="comprarModalLabel">Gracias por su compra</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Pronto recibirá su pedido</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- END MODAL COMPRA -->
-
-
     </div>
 
 </section>
 <!-- END SECTION SHOPPING CART -->
-            <div style="float:left; width:100%;">
+            <div style="float:left; width:50%;">
     	</div>
         </div>
     </div>
@@ -93,7 +69,7 @@
 <div>
 
 <!--LISTADO_PRODUCTOS-->
-<div class="m-3 p-3" style="width: 370px;  float:left;">
+<div class="m-3 p-3" style="width: 380px;  float:left;">
     <input type="hidden" value="{imagenes}" id="{id}" class="hidden_images">
     <div class="card" style="color: rgb(35, 43, 161); background-color:rgb(202, 163, 34);">
         <div class="centrado card-header bg-success" >
@@ -103,21 +79,17 @@
             <div class="row"  style="height:255px;" >
                 <div class="col-xs-12 col-sm-4">
                     <h6>{descripcion}</h6>
+                    <br>
                 </div>
                 <div class="col-xs-12  col-sm-8 images" id ="divImages_{id}">
-                    <input class="boton_personalizado" type="button" id="anterior_{id}" value="<<                                             >>" 
-                        onclick="allImages('{imagenes}', '{id}')"><br>
-                    <!--<input type="button" id="siguiente_{id}" value=">>"style="width: 31px;  float:right; color:darkorange;"
-                    onclick="next('{imagenes}, {id}')">--><br><br>
-                    
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12  col-sm-4 centrado" style="width: 30px;  float: center;">
-                    <strong>Precio unitario</strong><br> <h4 class="card-price">${precio}</h4> 
+                    <br><br><strong>Precio unitario</strong><br> <h4 class="card-price">${precio}</h4> 
                 </div>
                 <div class="col-xs-12  col-sm-8 derecho" style="width: 30px;  float: left;">
-                    <br>
+                    <br><br><br><br>
                     <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
                 </div>
             </div>
