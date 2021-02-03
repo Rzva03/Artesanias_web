@@ -2,16 +2,39 @@ $(document).ready(function (){
     $(".hidden_images").each(function (){
         let id= $(this).attr("id");
         let imagenes = $("#"+ id).val().split(",");
-        for (let index = 0; index < imagenes.length; index++) {
-            let imagen="<a href='/uploads/" + imagenes[index] +
-            "' data-lightbox='/uploads/" + imagenes[index] +
-            "'><img class='card-image columna' src='/uploads/" + imagenes[index] +
-            "' alt='imagen' width='170' height='170' id='imagen'> </a>";
-       $("#divImages_" + id).append(imagen);  
-            
-        }
+        let carrousel=`<div id="carouselControls_`+id+`" class="carousel slide images" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                            <img class="d-block w-100 card-image" src="/uploads/`+imagenes[0]+`" 
+                            alt="First slide" id='imagen' width='270' height='270'>
+                            </div>`;
+                    for (let index = 1; index < imagenes.length; index++) {
+                        carrousel+=`<div class="carousel-item">
+                                        <img class="d-block w-100" src="/uploads/`+imagenes[index]+`" 
+                                        alt="Second slide" width='270' height='270'>
+                                    </div>`;                                         
+                    }
+                carrousel+=`</div>
+                            <a class="carousel-control-prev" href="#carouselControls_`+id+`" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselControls_`+id+`" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                      </div>`;
 
+       $("#divImages_" + id).append(carrousel);  
+      // console.log(carrousel);
     });
     
 }
 )
+
+
+
+
+
+

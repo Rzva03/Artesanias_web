@@ -1,8 +1,11 @@
+let cont=0;
 
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 //console.log(':D: addToShoppingCartButtons', addToShoppingCartButtons);
 addToShoppingCartButtons.forEach((addToCartButton) => {
   addToCartButton.addEventListener('click', addToCartClicked);
+  //const cartCount = item.querySelector('.cart-Count');
+  //cartCount
 });
 
 //const comprarButton = document.querySelector('.comprarButton');
@@ -24,22 +27,29 @@ function addToCartClicked(event) {
   const itemImage = item.querySelector('.card-image').src;
  // console.log(':D: addToCart -> image', itemImage);
   addItemToShoppingCart(itemTitle, itemPrice, itemImage);
+  Swal.fire({
+    position: 'center',
+    icon: 'info',
+    title: 'Información...',
+    text: 'Producto agregado correctamente',
+    //timer: 1900,
+    //showConfirmButton: false
+    //footer: '<a href>Why do I have this issue?</a>'
+  })
 }
 
 function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
-  
   const elementsTitle = shoppingCartItemsContainer.getElementsByClassName(
     'shoppingCartItemTitle'
   );
+  //document.getElementById('cart-Count').innerHTML = contElement;
   for (let i = 0; i < elementsTitle.length; i++) {
     if (elementsTitle[i].innerText === itemTitle) {
-      let elementQuantity = elementsTitle[
-        i
-      ].parentElement.parentElement.parentElement.querySelector(
+      let elementQuantity = elementsTitle[i].parentElement.parentElement.parentElement.querySelector(
         '.shoppingCartItemQuantity'
       );
       elementQuantity.value++;
-      $('.toast').toast('show');
+      //document.getElementById('cart-Count').innerHTML = elementQuantity.value;
       updateShoppingCartTotal();
       return;
     }
@@ -62,7 +72,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
         <div class="col-4">
             <div
                 class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
-                <input class="shopping-cart-quantity-input shoppingCartItemQuantity" type="number"
+                <input class="shopping-cart-quantity-input shoppingCartItemQuantity cant" id='' type="number"
                     value="1">
                 <button class="btn btn-danger buttonDelete" type="button">X</button>
             </div>
@@ -80,28 +90,27 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     .addEventListener('change', quantityChanged);
 
   updateShoppingCartTotal();
+  //cont++;
+  //document.cart-Count.value=0+cont;
+
 }
 
 function updateShoppingCartTotal() {
   let total = 0;
+  let cant = 0;
   const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
 
   const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
   
   //console.log(':D: shoppingCartTotal -> shoppingCartItems', shoppingCartItems);
-  shoppingCartItems.forEach((shoppingCartItem) => {
+    shoppingCartItems.forEach((shoppingCartItem) => {
     const shoppingCartItemPriceElement = shoppingCartItem.querySelector(
       '.shoppingCartItemPrice'
     );
-    //console.log(':D: updateShoppingCartTotal -> shoppingCartItemPriceElement', shoppingCartItemPriceElement);
-    //const shoppingCartItemPrice=shoppingCartItemPriceElement.textContent.replace('$','');
-   // console.log(':D: updateShoppingCartTotal -> shoppingCartItemPriceElement', shoppingCartItemPrice);
     
     const shoppingCartItemPrice = Number(
       shoppingCartItemPriceElement.textContent.replace('$', '')
-    );
-    //console.log(':D: updateShoppingCartTotal -> shoppingCartItemPriceElement', shoppingCartItemPrice);
-    
+    );   
    
     const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
       '.shoppingCartItemQuantity'
@@ -112,8 +121,11 @@ function updateShoppingCartTotal() {
       shoppingCartItemQuantityElement.value
     );
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
+    cant = shoppingCartItemQuantity;
+
   });
   shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
+  document.getElementById('cart-Count').innerHTML = cant;
 }
 
 
@@ -134,17 +146,3 @@ function comprarButtonClicked() {
   updateShoppingCartTotal();
 }*/
 
-$(document).ready(function(){
-  $('#open').on('click', function(){
-      $('#popup').fadeIn('slow');
-      $('.popup-overlay').fadeIn('slow');
-      $('.popup-overlay').height($(window).height());
-      return false;
-  });
-
-  $('#close').on('click', function(){
-      $('#popup').fadeOut('slow');
-      $('.popup-overlay').fadeOut('slow');
-      return false;
-  });
-});

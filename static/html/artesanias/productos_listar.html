@@ -1,76 +1,66 @@
-<a style='cursor: pointer;' id="open" title="" class="boton_mostrar"><img src="/static/img/cart.png"></a>
-<div id="popup" style="display: none;">
-    <div class="content-popup">
-        <div class="close"><a href="#" id="close"><img src="/static/img/close.png"/></a></div>
-        <div>
-<!-- START SECTION SHOPPING CART -->
-<section class="shopping-cart" >
-    <div class="container">
-        <h1 class="text-center">Carrito de Compras</h1>
-        <hr>
-        <div class="row">
-            <div class="col-6">
-                <div class="shopping-cart-header">
-                    <h6>Producto</h6>
-                </div>
+<a style='cursor: pointer; float: right;' data-toggle="modal" data-target="#shopingCart"><img src="/static/img/shopping-cart.png" width='30' height='30'title='Abrir carrito'></a>
+<span class="header_cartCount__oqZPT header_bodega__2HNRQ" id="cart-Count">0</span>
+<br>
+<div class="modal fade" id="shopingCart" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="shopingCart">Carrito de Compras</h5>
+                <button class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>      
+                </button>            
             </div>
-            <div class="col-2">
-                <div class="shopping-cart-header">
-                    <h6 class="text-truncate">Precio</h6>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="shopping-cart-header">
-                    <h6>Cantidad</h6>
-                </div>
-            </div>
-        </div>
-        <!-- ? START SHOPPING CART ITEMS -->
-        <div class="shopping-cart-items shoppingCartItemsContainer">
-        </div>
-        <!-- ? END SHOPPING CART ITEMS -->
-
-        <!-- START TOTAL -->
-        <div class="row">
-            <div class="col-12">
-                <div class="shopping-cart-total d-flex align-items-center">
-                    <p class="mb-0">Total</p>
-                    <p class="ml-4 mb-0 shoppingCartTotal">$0.0</p>
-                    <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
-                        data-delay="2000">
-                        <div class="toast-header">
-                            <span>✅</span>
-                            <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
-                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+            <div class="modal-body">
+                <div class="alert alert-success">
+                    <div class="container shopping-cart">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="shopping-cart-header">
+                                    <h6>Producto</h6>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="shopping-cart-header">
+                                    <h6 class="text-truncate">Precio</h6>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="shopping-cart-header">
+                                    <h6>Cantidad</h6>
+                                </div>
+                            </div>
                         </div>
-                        <div class="toast-body text-white">
-                            Se aumentó correctamente la cantidad
+                        <!-- ? START SHOPPING CART ITEMS -->
+                        <div class="shopping-cart-items shoppingCartItemsContainer">
                         </div>
+                        <!-- ? END SHOPPING CART ITEMS -->               
                     </div>
-                    <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
-                    onclick="location.href='/artesanias/pedidos/agregar'">Comprar</button>
+                    
                 </div>
+                <!-- START TOTAL -->
+                <div class="row">
+                <div class="col-12 total-cart">
+                    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">$0.0</p>
+                    </div>
+                </div>
+                </div> 
+    
+            <!-- END TOTAL -->   
             </div>
-        </div>
-
-        <!-- END TOTAL -->
-    </div>
-
-</section>
-<!-- END SECTION SHOPPING CART -->
-            <div style="float:left; width:50%;">
-    	</div>
+            <div class="modal-footer">
+                <button class="btn btn-warning" type="button" data-dismiss="modal">Seguir comprando</button>
+                <button class="btn btn-success" tabindex="-1" type="button">Comprar ahora</button>
+            </div>
         </div>
     </div>
 </div>
-<div class="popup-overlay"></div>
-<div>
 
 <!--LISTADO_PRODUCTOS-->
 <div class="m-3 p-3" style="width: 380px;  float:left;">
     <input type="hidden" value="{imagenes}" id="{id}" class="hidden_images">
+    <input type="hidden" value="{producto}" id="producto_{id}" class="hidden_images">
     <div class="card" style="color: rgb(35, 43, 161); background-color:rgb(202, 163, 34);">
         <div class="centrado card-header bg-success" >
             <h5 class="card-title">{producto}</h5>
@@ -90,7 +80,7 @@
                 </div>
                 <div class="col-xs-12  col-sm-8 derecho" style="width: 30px;  float: left;">
                     <br><br><br><br>
-                    <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+                    <button class="item-button btn btn-primary addToCart" >AÑADIR AL CARRITO</button>
                 </div>
             </div>
             
