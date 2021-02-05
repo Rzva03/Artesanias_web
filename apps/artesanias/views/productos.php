@@ -13,7 +13,7 @@ class ProductosView  {
         $str = file_get_contents(
             STATIC_DIR . "/static/html/artesanias/productos_listar.html"); 
         $html = Template($str)->render_regex('LISTADO_PRODUCTOS', $productos);
-        print Template('Productos')->show($html);
+        print Template('Catálogo')->show($html);
     } 
 }
 

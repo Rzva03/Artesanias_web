@@ -1,15 +1,9 @@
-let cont=0;
+
 
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
-//console.log(':D: addToShoppingCartButtons', addToShoppingCartButtons);
 addToShoppingCartButtons.forEach((addToCartButton) => {
   addToCartButton.addEventListener('click', addToCartClicked);
-  //const cartCount = item.querySelector('.cart-Count');
-  //cartCount
 });
-
-//const comprarButton = document.querySelector('.comprarButton');
-//comprarButton.addEventListener('click', comprarButtonClicked);
 
 const shoppingCartItemsContainer = document.querySelector(
   '.shoppingCartItemsContainer'
@@ -32,8 +26,8 @@ function addToCartClicked(event) {
     icon: 'info',
     title: 'Información...',
     text: 'Producto agregado correctamente',
-    //timer: 1900,
-    //showConfirmButton: false
+    timer: 1900,
+    showConfirmButton: true
     //footer: '<a href>Why do I have this issue?</a>'
   })
 }
@@ -49,8 +43,8 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
         '.shoppingCartItemQuantity'
       );
       elementQuantity.value++;
-      //document.getElementById('cart-Count').innerHTML = elementQuantity.value;
       updateShoppingCartTotal();
+      updateShoppingCount();
       return;
     }
   }
@@ -60,7 +54,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
   <div class="row shoppingCartItem">
         <div class="col-6">
             <div class="shopping-cart-item d-flex align-items-center h-100 border-bottom pb-2 pt-3">
-                <img src=${itemImage} width='50' height='50' class="shopping-cart-image">
+                <img src=${itemImage} width='60' height='60' class="shopping-cart-image">
                 <h6 class="shopping-cart-item-title shoppingCartItemTitle text-truncate ml-3 mb-0">${itemTitle}</h6>
             </div>
         </div>
@@ -74,7 +68,10 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
                 class="shopping-cart-quantity d-flex justify-content-between align-items-center h-100 border-bottom pb-2 pt-3">
                 <input class="shopping-cart-quantity-input shoppingCartItemQuantity cant" id='' type="number"
                     value="1">
-                <button class="btn btn-danger buttonDelete" type="button">X</button>
+                <button class="btn btn buttonDelete" type="button">
+                <img src="/static/img/remove.png">
+                </button>
+
             </div>
         </div>
     </div>`;
@@ -90,6 +87,7 @@ function addItemToShoppingCart(itemTitle, itemPrice, itemImage) {
     .addEventListener('change', quantityChanged);
 
   updateShoppingCartTotal();
+  updateShoppingCount();
   //cont++;
   //document.cart-Count.value=0+cont;
 
@@ -101,8 +99,7 @@ function updateShoppingCartTotal() {
   const shoppingCartTotal = document.querySelector('.shoppingCartTotal');
 
   const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
-  
-  //console.log(':D: shoppingCartTotal -> shoppingCartItems', shoppingCartItems);
+
     shoppingCartItems.forEach((shoppingCartItem) => {
     const shoppingCartItemPriceElement = shoppingCartItem.querySelector(
       '.shoppingCartItemPrice'
@@ -115,30 +112,40 @@ function updateShoppingCartTotal() {
     const shoppingCartItemQuantityElement = shoppingCartItem.querySelector(
       '.shoppingCartItemQuantity'
     );
-    //console.log(':D: updateShoppingCartTotal -> shoppingCartItemPriceElement', shoppingCartItemQuantityElement);
-    
+   
     const shoppingCartItemQuantity = Number(
       shoppingCartItemQuantityElement.value
     );
     total = total + shoppingCartItemPrice * shoppingCartItemQuantity;
-    cant = shoppingCartItemQuantity;
 
   });
   shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
-  document.getElementById('cart-Count').innerHTML = cant;
+  document.getElementById('cart-Total').innerHTML = `$${total.toFixed(2)}`;
+
 }
 
+function updateShoppingCount() {
+    let cant = 0;
+    const shoppingCartItems = document.querySelectorAll('.shoppingCartItem');
+
+    for (let index = 0; index < shoppingCartItems.length; index++) {
+      cant++;
+    }
+  document.getElementById('cart-Count').innerHTML = cant;
+}
 
 function removeShoppingCartItem(event) {
   const buttonClicked = event.target;
   buttonClicked.closest('.shoppingCartItem').remove();
   updateShoppingCartTotal();
+  updateShoppingCount();
 }
 
 function quantityChanged(event) {
   const input = event.target;
   input.value <= 0 ? (input.value = 1) : null;
   updateShoppingCartTotal();
+  updateShoppingCount();
 }
 /*
 function comprarButtonClicked() {

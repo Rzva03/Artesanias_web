@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Desarrollo de Aplicaciones Web</title>
+    <title>Artesanías Oaxaca</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,25 +32,16 @@
     <link rel="stylesheet" href="/static/css/estilo.css">
     <link href="/static/css/lightbox.css" rel="stylesheet" />
     <script src="/static/js/lightbox.js"></script>
-    <script>
-        function alert(mensaje){
-            $("#msgAlert").html(mensaje);
-            $("#divAlert").show();
-        } 
-        $(document).ready(function(){
-            $("#divAlert").hide();
-        });
-    </script>
 </head>
 
 <body>
     <header id="header">
         <div class="row">
             <div class="col-xs-12 col-sm-2">
-                <img src="/static/img/logo.png" alt="logo" style="width: 120px;">
+                <img src="/static/img/logo-aripo.png" alt="logo" style="width: 180px;">
             </div>
-            <div class="col-xs-12 col-sm-8">
-                <h1>Desarrollo de Aplicaciones Web </h1>
+            <div class="col-xs-12 col-sm-8" id="title">
+                <h1>Artesanías de Oaxaca </h1>
                 <h3> {TITULO}</h3>
             </div>
             <div class="col-xs-12 col-sm-2">
@@ -81,30 +72,11 @@
                       </div>
    
             </nav>
-            <section class="col-sm-9" style="width: 700px; float: left; " >
+            <section class="col-sm-9" id="sectionPages">
                 {CONTENIDO}
             </section>
         </div>
-    </div>
-     <!--- Div para los mensajes de alerta -->
-     <div id="divAlert" class="h-100 modal">
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="card shadow" >
-                <div class="card-header bg-success centrado">
-                    <h3>AVISO</h3>
-                </div>
-                <div id="msgAlert" class="card-body"> 
-                </div>
-                <div class="card-footer centrado">
-                    <input type="button" class="btn-primary"
-                        id="btnAccept" value="Aceptar"
-                        onClick="$('#divAlert').hide(); window.history.back();"
-                    >
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- fin div alert-->           
+    </div>      
 </body>
 
 </html>

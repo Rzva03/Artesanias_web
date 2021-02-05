@@ -5,28 +5,38 @@ header {
     height: auto;
 }
 
+#title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
+#sectionPages{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 700px; float: left;
+}
 .vertical-menu {
     width: auto; /* Set a width if you like */
 
-  }
-  
-  .vertical-menu a {
-    background-color: rgb(244, 246, 247); /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 15px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .vertical-menu a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .vertical-menu a.active {
-    background-color: #5397ce; /* Add a green color to the "active/current" link */
-    color: white;
-  }
+}
+
+#nav{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.vertical-menu a {
+  background-color: rgb(244, 246, 247); /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 15px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #5397ce; /* Add a green color to the "active/current" link */
+  color: white;
+}
 
 section{
     background-color: rgb(196, 248, 183);
@@ -74,6 +84,7 @@ section{
 
 .shopping-cart-image{
   width: 60px;
+  height: 60px;
 }
 
 
@@ -90,16 +101,30 @@ section{
   border-radius: 50%;
   width: 17px;
   height: 17px;
-  padding: 2px;
+  padding: 0px;
   background-color: #fbca2a;
   color: #484848;
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
   position: absolute;
   top: 0px;
   right: 10px;
+  font-family: fantasy;
 }
 
+#cart-Total{
+  border-radius: 0%;
+  width: 17px;
+  height: 17px;
+  padding: 5px;
+  color: #484848;
+  text-align: left;
+  font-size: 13px;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-family: fantasy;
+}
 
 * {
   box-sizing: border-box!important;
@@ -121,30 +146,13 @@ section{
   min-height: 0;
   min-width: 0;
 }
-.header_miniCartIcon__waZxt {
-  cursor: pointer;
-  display: flex;
-  align-self: center;
-}
 
-* {
-  box-sizing: border-box!important;
-  padding: 0;
-  margin: 0;
-  min-height: 0;
-  min-width: 0;
-}
 
 :not(svg) {
   transform-origin: 0px 0px;
 }
 
-.header_miniCartIcon__waZxt {
-  cursor: pointer;
-  display: flex;
-  align-self: center;
-}
-
-.total-cart{
+.addToCart{
+  vertical-align: inherit;
   float: right;
 }

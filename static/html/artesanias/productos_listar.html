@@ -1,5 +1,6 @@
 <a style='cursor: pointer; float: right;' data-toggle="modal" data-target="#shopingCart"><img src="/static/img/shopping-cart.png" width='30' height='30'title='Abrir carrito'></a>
 <span class="header_cartCount__oqZPT header_bodega__2HNRQ" id="cart-Count">0</span>
+<span class="" id="cart-Total">0</span>
 <br>
 <div class="modal fade" id="shopingCart" tabindex="-1" role="dialog" aria-labelledby="tituloVentana" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -79,8 +80,10 @@
                     <br><br><strong>Precio unitario</strong><br> <h4 class="card-price">${precio}</h4> 
                 </div>
                 <div class="col-xs-12  col-sm-8 derecho" style="width: 30px;  float: left;">
-                    <br><br><br><br>
-                    <button class="item-button btn btn-primary addToCart" >AÑADIR AL CARRITO</button>
+                    <br><br>
+                    <button class="item-button btn btn-secondary addToCart" title="Agregar al carrito">
+                        <img src="/static/img/addC.png">
+                    </button>
                 </div>
             </div>
             
