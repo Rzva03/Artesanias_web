@@ -131,7 +131,7 @@ function updateShoppingCount() {
     for (let index = 0; index < shoppingCartItems.length; index++) {
       cant++;
     }
-  document.getElementById('cart-Count').innerHTML = cant;
+  document.getElementById('cart-Count').innerHTML = `$${cant}`;
 }
 
 function removeShoppingCartItem(event) {

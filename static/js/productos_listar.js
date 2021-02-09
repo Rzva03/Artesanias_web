@@ -8,12 +8,20 @@ $(document).ready(function (){
                             <img class="d-block w-100 card-image" src="/uploads/`+imagenes[0]+`" 
                             alt="First slide" id='imagen' width='270' height='270'>
                             </div>`;
-                    for (let index = 1; index < imagenes.length; index++) {
-                        carrousel+=`<div class="carousel-item">
-                                        <img class="d-block w-100" src="/uploads/`+imagenes[index]+`" 
-                                        alt="Second slide" width='270' height='270'>
-                                    </div>`;                                         
+                    if(imagenes.length==1){
+                            carrousel+=`<div class="carousel-item">
+                                            <img class="d-block w-100" src="/uploads/`+imagenes[0]+`" 
+                                            alt="Second slide" width='270' height='270'>
+                                        </div>`;                                         
+                    }else{
+                        for (let index = 1; index < imagenes.length; index++) {
+                            carrousel+=`<div class="carousel-item">
+                                            <img class="d-block w-100" src="/uploads/`+imagenes[index]+`" 
+                                            alt="Second slide" width='270' height='270'>
+                                        </div>`;                                         
+                        }
                     }
+
                 carrousel+=`</div>
                             <a class="carousel-control-prev" href="#carouselControls_`+id+`" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -27,7 +35,6 @@ $(document).ready(function (){
                       </div>`;
 
        $("#divImages_" + id).append(carrousel);  
-      // console.log(carrousel);
     });
     
 }

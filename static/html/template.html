@@ -1,84 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <title>Artesanías Oaxaca</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!--seccion jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link href = "https://code.jquery.com/jquery-2.1.4.min.js" rel = "stylesheet">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://code.jquery.com/jquery-2.1.4.min.js" rel="stylesheet" />
 
     <!--para bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">   
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- fuentes -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <!-- chosen -->
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.proto.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <link   rel="stylesheet"  href="https://haubek.github.io/dist/css/component-chosen.min.css">
+    <link
+      rel="stylesheet"
+      href="https://haubek.github.io/dist/css/component-chosen.min.css"
+    />
 
-
-    <link rel="stylesheet" href="/static/css/estilo.css">
+    <link rel="stylesheet" href="/static/css/estilo.css" />
     <link href="/static/css/lightbox.css" rel="stylesheet" />
     <script src="/static/js/lightbox.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header id="header">
-        <div class="row">
-            <div class="col-xs-12 col-sm-2">
-                <img src="/static/img/logo-aripo.png" alt="logo" style="width: 180px;">
-            </div>
-            <div class="col-xs-12 col-sm-8" id="title">
-                <h1>Artesanías de Oaxaca </h1>
-                <h3> {TITULO}</h3>
-            </div>
-            <div class="col-xs-12 col-sm-2">
-                <ul>
-                    <li class="nav-item dropdown list-inline">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                            <span class="badge badge-pill badge-success">Abraham Victor ZR</span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Cerrar sesión</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-2">
+          <img
+            src="/static/img/logo-aripo.png"
+            alt="logo"
+            style="width: 180px"
+          />
         </div>
+        <div class="col-xs-12 col-sm-8" id="title">
+          <h1>Artesanías de Oaxaca</h1>
+          <h3>{TITULO}</h3>
+        </div>
+        <div class="col-xs-12 col-sm-2">
+          <ul>
+            <li class="nav-item dropdown list-inline">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbardrop"
+                data-toggle="dropdown"
+              >
+                <span class="badge badge-pill badge-success"
+                  >Abraham Victor ZR</span
+                >
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Cerrar sesión</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <div class="container-fluid">
-        <div class="row">
-            <nav class="col-sm-3" id="nav" >
-                    <div class="vertical-menu">
-                        <a href="/artesanias/clasificacion/listar" class="active">Inicio</a>
-                        <a href="/artesanias/clasificacion/listar">Clasificación</a>
-                        <a href="/artesanias/roles/listar">Roles</a>
-                        <a href="/artesanias/artesanos/listar">Artesanos</a>
-                        <a href="/artesanias/clientes/listar">Clientes</a>
-                        <a href="/artesanias/productos/listar">Productos</a>
-                      </div>
-   
-            </nav>
-            <section class="col-sm-9" id="sectionPages">
-                {CONTENIDO}
-            </section>
-        </div>
-    </div>      
-</body>
-
+      <div class="row">
+        <nav class="col-sm-3" id="nav">
+          <div class="vertical-menu">
+            <a href="/artesanias/clasificacion/listar" class="active">Inicio</a>
+            <a href="/artesanias/clasificacion/listar">Clasificación</a>
+            <a href="/artesanias/roles/listar">Roles</a>
+            <a href="/artesanias/artesanos/listar">Artesanos</a>
+            <a href="/artesanias/clientes/listar">Clientes</a>
+            <a href="/artesanias/productos/listar">Productos</a>
+          </div>
+        </nav>
+        <section class="col-sm-9" id="sectionPages">{CONTENIDO}</section>
+      </div>
+    </div>
+  </body>
 </html>
-
-
